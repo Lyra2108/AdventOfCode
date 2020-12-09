@@ -21,7 +21,7 @@ static IEnumerable<string> ReadInLines()
 
 class Rule
 {
-    private static Regex _ruleRegex = new Regex(@"(?'mainColor'\w+ \w+) bags contain((?'nothing' no other bags)|(?'otherBag' (?'times'\d+) (?'otherColor'\w+ \w+) bags?,?)+)\.");
+    private static readonly Regex _ruleRegex = new Regex(@"(?'mainColor'\w+ \w+) bags contain((?'nothing' no other bags)|(?'otherBag' (?'times'\d+) (?'otherColor'\w+ \w+) bags?,?)+)\.");
 
     public string MainColor { get; }
     public IDictionary<string, int> InnerBags { get; }
