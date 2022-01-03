@@ -25,8 +25,8 @@ fn main() {
         .iter()
         .skip(3)
         .zip(contents.iter())
-        .fold(0, |count, touple| {
-            match touple.1 < touple.0
+        .fold(0, |count, (second, first)| {
+            match first < second
             {
                 true => count + 1,
                 false => count
